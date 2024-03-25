@@ -1,0 +1,19 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: flipkart1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      name: deployment
+  template:
+    metadata:
+      name: Login module
+      labels:
+        name: deployment
+    spec:
+      containers:
+        - name: login
+          image: ubuntu
+          command: ["/bin/bash", "-c", "whiletrue", do echo sak login; sleep 5 ; done"]
