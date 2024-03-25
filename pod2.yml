@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: amazon
+spec:
+  containers:
+    - name: signup
+      image: httpd
+      ports:
+        - containerPort: 80
