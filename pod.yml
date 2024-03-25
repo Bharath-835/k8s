@@ -1,10 +1,11 @@
-kind: Pod
 apiVersion: v1
+kind: Pod
 metadata:
-  name: jspiders
+  name: flipkart
 spec:
   containers:
-    - name: sample1
-      image: ubuntu
-      command: ["/bin/bash", "-c", "while true; do echo Hi everyone; sleep 5; done"]
-  restartPolicy: Never     #Default to Always
+    - name: login
+      image: nginx
+      ports:
+        - containerPort: 80
+
