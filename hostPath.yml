@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demo
+spec:
+  containers:
+  - name: signup
+    image: centos
+    command: ["/bin/bash", "-c", "sleep 15000"]
+    volumeMounts:
+    - name: sandisk
+      mountPath: /tmp/hostPath
+  volumes:
+  - name: sandisk
+    hostPath:
+      path: /tmp/data
