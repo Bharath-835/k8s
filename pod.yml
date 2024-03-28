@@ -1,10 +1,21 @@
-kind: Pod
 apiVersion: v1
+kind: Pod
 metadata:
-  name: jspiders
+  name: flipkart
 spec:
   containers:
-    - name: sample1
-      image: ubuntu
-      command: ["/bin/bash", "-c", "while true; do echo Hi everyone; sleep 5; done"]
-  restartPolicy: Never     #Default to Always
+  - name: c00
+    image: centos
+    command: ["/bin/bash", "-c", "sleep 15000"]
+    volumeMounts:
+      - name: sandisk
+        mountPath: "/tmp/qspider"
+  - name: c01
+    image: centos
+    command: ["/bin/bash", "-c", "sleep 10000"]
+    volumeMounts:
+      - name: sandisk
+        mountPath: "/tmp/jspider"
+  volumes:
+    - name: sandisk
+      emptyDir: {}
